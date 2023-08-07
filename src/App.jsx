@@ -1,8 +1,12 @@
+import Header from './components/Layout/Header/Header';
+import HeroImg from './components/UI/HeroImg/HeroImg';
+
 function App() {
   return (
-    <div>
-      <h2>Lets get started!</h2>
-    </div>
+    <>
+      <Header />
+      <HeroImg />
+    </>
   );
 }
 

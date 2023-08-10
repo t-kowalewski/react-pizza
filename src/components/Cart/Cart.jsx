@@ -1,5 +1,5 @@
-import Card from '../UI/Card/Card';
 import classes from './Cart.module.css';
+import Modal from '../UI/Modal/Modal';
 
 const Cart = (props) => {
   // const cartItems = props.cartItems.map((cartItem) => {
@@ -12,8 +12,7 @@ const Cart = (props) => {
   );
 
   return (
-    // ul should be in modal wrapper - portals
-    <div>
+    <Modal>
       <ul className={classes['cart-items']}>{cartItems}</ul>
 
       <div className={classes.total}>
@@ -26,7 +25,7 @@ const Cart = (props) => {
         <button className={classes.button}>Order</button>
         {/* Order rendered only when we have items in the cart */}
       </div>
-    </div>
+    </Modal>
   );
 };
 

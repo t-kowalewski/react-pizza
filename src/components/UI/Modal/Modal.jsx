@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import { useContext } from 'react';
-import { AppContext } from '../../../App';
+import { AppContext } from '../../../store/AppProvider';
 
 import classes from './Modal.module.css';
 import Card from '../Card/Card';

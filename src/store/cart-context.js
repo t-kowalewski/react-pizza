@@ -1,11 +1,11 @@
 import { createContext } from 'react';
 
 const CartContext = createContext({
-  items: [],
-  totalAmount: 0,
+  items: [], // [{id: 'p1', name: "Burger", amount: 1, price: 5}]
+  totalAmount: 0, // how much
   // fn to update context
-  addItem: () => {},
-  removeItem: () => {},
+  addItem: (item) => {},
+  removeItem: (id) => {},
 });
 
 export default CartContext;

@@ -1,7 +1,7 @@
 import classes from './Cart.module.css';
 import Modal from '../UI/Modal/Modal';
 import { useContext } from 'react';
-import { AppContext } from '../../App';
+import { AppContext } from '../../store/AppProvider';
 
 const Cart = () => {
   // const cartItems = props.cartItems.map((cartItem) => {

@@ -1,6 +1,6 @@
 import classes from './HeaderCartButton.module.css';
 import { useContext } from 'react';
-import { AppContext } from '../../../App';
+import { AppContext } from '../../../store/AppProvider';
 import CartContext from '../../../store/cart-context';
 
 import CartIcon from '../../Cart/CartIcon/CartIcon';

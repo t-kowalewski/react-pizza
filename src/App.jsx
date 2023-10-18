@@ -1,14 +1,12 @@
 import Header from './components/Layout/Header/Header';
-import HeroImg from './components/UI/HeroImg/HeroImg';
+import HeroImg from './components/Layout/HeroImg/HeroImg';
 import Meals from './components/Meals/Meals';
-import Cart from './components/Cart/Cart';
+import AppProvider from './store/AppProvider';
 import CartProvider from './store/CartProvider';
-import { useState, createContext } from 'react';
-
-export const AppContext = createContext(null);
+import Cart from './components/Cart/Cart';
+import { useState } from 'react';
 
 function App() {
-  // move AppContext logic to 'store' folder
   const [showCart, setShowCart] = useState(false);
 
   const openCartHandler = () => {
@@ -20,7 +18,7 @@ function App() {
   };
 
   return (
-    <AppContext.Provider value={{ openCartHandler, closeCartHandler }}>
+    <AppProvider value={{ openCartHandler, closeCartHandler }}>
       <CartProvider>
         <Header />
         <HeroImg />
@@ -31,7 +29,7 @@ function App() {
 
         {showCart && <Cart />}
       </CartProvider>
-    </AppContext.Provider>
+    </AppProvider>
   );
 }
 

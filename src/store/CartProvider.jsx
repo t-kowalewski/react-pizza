@@ -8,9 +8,11 @@ const cartReducer = (state, action) => {
     const updItems = state.items.concat(action.payload);
 
     // MY APPROACH TO ADD NEW ITEM TO THE CART AND HANDLE EXISTING ONE
-    //
-    // const updItems = [...state];
-    // const existingItemInd = updItems.items.findIndex(
+
+    // const updItems = [...state.items];
+    // // console.log(updItems);
+    // // console.log(action.payload);
+    // const existingItemInd = updItems.findIndex(
     //   (item) => item.name === action.payload.name
     // );
 
@@ -20,7 +22,6 @@ const cartReducer = (state, action) => {
     // } else {
     //   updItems.push(action.payload);
     // }
-    //
 
     const updTotalAmount =
       state.totalAmount + action.payload.price * action.payload.amount;

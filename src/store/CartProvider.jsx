@@ -5,23 +5,23 @@ import CartContext from './cart-context';
 
 const cartReducer = (state, action) => {
   if (action.type === 'ADD_TO_CART') {
-    const updItems = state.items.concat(action.payload);
+    const existingItemInd = state.items.findIndex(
+      (item) => item.name === action.payload.name
+    );
+    const existingCartItem = state.items[existingItemInd];
 
-    // MY APPROACH TO ADD NEW ITEM TO THE CART AND HANDLE EXISTING ONE
+    let updItems;
 
-    // const updItems = [...state.items];
-    // // console.log(updItems);
-    // // console.log(action.payload);
-    // const existingItemInd = updItems.findIndex(
-    //   (item) => item.name === action.payload.name
-    // );
-
-    // if (existingItemInd >= 0) {
-    //   updItems[existingItemInd].amount += action.payload.amount;
-    //   updItems[existingItemInd].price += action.payload.price;
-    // } else {
-    //   updItems.push(action.payload);
-    // }
+    if (existingCartItem) {
+      const updItem = {
+        ...existingCartItem,
+        amount: existingCartItem.amount + action.payload.amount,
+      };
+      updItems = [...state.items];
+      updItems[existingItemInd] = updItem;
+    } else {
+      updItems = [...state.items, action.payload];
+    }
 
     const updTotalAmount =
       state.totalAmount + action.payload.price * action.payload.amount;
@@ -49,7 +49,7 @@ const CartProvider = (props) => {
     addItem: addItemToCartHandler,
     removeItem: remItemFromCartHandler,
   });
-  console.log(cartContext);
+  // console.log(cartContext);
 
   return (
     <CartContext.Provider value={cartContext}>

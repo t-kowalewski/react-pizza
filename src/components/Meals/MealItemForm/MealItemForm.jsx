@@ -10,7 +10,6 @@ const MealItemForm = (props) => {
   const addHandler = (e) => {
     e.preventDefault();
     setAmountIsValid(true);
-    console.log('added');
 
     const enteredAmount = +inpAmountRef.current.value;
     if (enteredAmount < 0 || enteredAmount > 5) {

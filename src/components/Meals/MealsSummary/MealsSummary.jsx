@@ -3,7 +3,7 @@ import classes from './MealsSummary.module.css';
 const MealsSummary = () => {
   return (
     <section className={classes.summary}>
-      <h2>Welcome to our pizza ordering site!</h2>
+      <h2>Welcome to our pizza ordering site!🍕</h2>
 
       <p>
         We offer a wide variety of delicious pizzas, made with fresh ingredients

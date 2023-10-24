@@ -3,6 +3,11 @@
   height: 25rem;
   z-index: 0;
   overflow: hidden;
+  --mask:
+    radial-gradient(33.54px at 50% calc(100% - 45.00px), #000 99%, #0000 101%) calc(50% - 30px) 0/60px 100%,
+    radial-gradient(33.54px at 50% calc(100% + 30.00px), #0000 99%, #000 101%) 50% calc(100% - 15px)/60px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
 }
 
 .main-image img {
@@ -10,21 +15,21 @@
   height: 100%;
   object-fit: cover;
   transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
-
-  /* to do - wavy img border */
-  /* fix 4k rotated img bug */
-  /* 
-  --mask:
-    radial-gradient(60.47px at 50% calc(100% - 82.50px), #000 99%, #0000 101%) calc(50% - 60px) 0/120px 100%,
-    radial-gradient(60.47px at 50% calc(100% + 52.50px), #0000 99%, #000 101%) 50% calc(100% - 30px)/120px 100% repeat-x;
-  -webkit-mask: var(--mask);
-  mask: var(--mask); */
-
-  /* border: solid 1px #3f3f3f; */
 }
 
 @media (min-width: 768px) {
   .main-image {
     height: 35rem;
+  }
+
+  .main-image img {
+    transform: none;
+  }
+}
+
+@media (min-width: 1500px) {
+  .main-image {
+    width: 60rem;
+    margin-inline: auto;
   }
 }

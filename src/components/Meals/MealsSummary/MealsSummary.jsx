@@ -3,15 +3,18 @@ import classes from './MealsSummary.module.css';
 const MealsSummary = () => {
   return (
     <section className={classes.summary}>
-      <h2>Original Pizza</h2>
+      <h2>Welcome to our pizza ordering site!</h2>
 
       <p>
-        Choose your favorite meal from our broad selection of available meals
-        and enjoy a delicious lunch or dinner at home.
+        We offer a wide variety of delicious pizzas, made with fresh ingredients
+        and baked to perfection. Whether you’re a fan of classic Margherita,
+        love a meaty feast, or prefer a veggie delight, we’ve got something for
+        everyone.
       </p>
       <p>
-        All our meals are cooked with high-quality ingredients, just-in-time and
-        of course by experienced chefs!
+        Ordering is simple and quick. Just choose your favorite pizza, select
+        amount, and proceed to checkout. Your hot and tasty pizza will be on its
+        way to you in no time!
       </p>
     </section>
   );

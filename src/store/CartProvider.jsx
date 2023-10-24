@@ -45,7 +45,6 @@ const cartReducer = (state, action) => {
 
     const updItems = [...state.items];
 
-    console.log(remItemIndex);
     if (updItem.amount === 0) {
       updItems.splice(remItemIndex, 1);
     } else {

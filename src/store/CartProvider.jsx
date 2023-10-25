@@ -25,6 +25,12 @@ const cartReducer = (state, action) => {
 
     const updTotalAmount =
       state.totalAmount + action.payload.price * action.payload.amount;
+    console.log(
+      'ADD',
+      state.totalAmount,
+      action.payload.price,
+      action.payload.amount
+    );
 
     return {
       ...state,
@@ -52,11 +58,12 @@ const cartReducer = (state, action) => {
     }
 
     const updTotalAmount = state.totalAmount - updItem.price;
+    console.log('DEC', state.totalAmount, updItem.price);
 
     return {
       ...state,
       items: updItems,
-      totalAmount: updTotalAmount,
+      totalAmount: updTotalAmount >= 0 ? updTotalAmount : 0, // workaround regarding floating numbers - if number looks something like -0.0038493, toFixed(2) in Cart component returns Total Amount -0
     };
   }
 };
@@ -76,7 +83,6 @@ const CartProvider = (props) => {
     addItem: addItemToCartHandler,
     removeItem: remItemFromCartHandler,
   });
-  // console.log(cartContext);
 
   return (
     <CartContext.Provider value={cartContext}>
